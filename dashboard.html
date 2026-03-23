@@ -922,11 +922,6 @@ p { font-size:0.87rem; line-height:1.7; color:var(--text-mid); margin-bottom:10p
     var track = document.getElementById('itlTrack');
     var scrollContainer = document.getElementById('itlScroll');
     var dimmedCats = {};
-    var rendered = false;
-
-    function renderTimeline() {
-      if (rendered || !track || !scrollContainer) return;
-      rendered = true;
 
     // Position events along the track with cluster-aware spacing
     var positions = [];
@@ -1023,20 +1018,6 @@ p { font-size:0.87rem; line-height:1.7; color:var(--text-mid); margin-bottom:10p
       }
     });
 
-    } // end renderTimeline
-
-    // Render immediately if tab is visible, otherwise defer
-    var timelineTab = document.getElementById('tab-timeline');
-    if (timelineTab && timelineTab.style.display !== 'none') {
-      renderTimeline();
-    }
-    // Hook into tab switching to render on first show
-    var origSwitchTab = window.switchTab;
-    window.switchTab = function(id, btn) {
-      if (origSwitchTab) origSwitchTab(id, btn);
-      if (id === 'tab-timeline') renderTimeline();
-    };
-
     // ═══════════════════════════════════════════════════
     // INTERACTIVITY
     // ═══════════════════════════════════════════════════
@@ -1098,8 +1079,8 @@ p { font-size:0.87rem; line-height:1.7; color:var(--text-mid); margin-bottom:10p
       });
     };
 
-    // Auto-scroll to today on load
-    setTimeout(function() { window.itlScrollToToday(); }, 300);
+    // Auto-scroll to today on load (guarded — tab may be hidden)
+    setTimeout(function() { try { window.itlScrollToToday(); } catch(e) {} }, 300);
   })();
   </script>
 </div>
