@@ -76,7 +76,7 @@ strong { color:var(--text); }
 .htl-wrap::-webkit-scrollbar-track { background:var(--paper); border-radius:3px; }
 .htl-wrap::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
 .htl-hint { text-align:center; font-family:var(--font-m); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px; }
-.htl-track { display:grid; grid-template-rows:200px 200px; grid-auto-columns:260px; column-gap:12px; grid-auto-flow:column; min-width:max-content; padding:0 48px; gap:0; position:relative; }
+.htl-track { display:grid; grid-template-rows:210px 210px; grid-auto-columns:280px; column-gap:20px; grid-auto-flow:column; min-width:max-content; padding:0 48px; gap:0; position:relative; }
 .htl-axis { position:absolute; top:50%; left:0; right:0; height:4px; transform:translateY(-50%); background:linear-gradient(90deg, var(--text-muted) 0%, var(--red) 20%, var(--amber) 45%, var(--red) 60%, var(--green) 80%, var(--gold) 100%); border-radius:2px; z-index:1; }
 .htl-item { position:relative; z-index:10; padding:6px 6px; display:flex; flex-direction:column; }
 .htl-item:nth-child(odd) { grid-row:1; align-self:end; padding-bottom:20px; }
@@ -103,7 +103,7 @@ strong { color:var(--text); }
 .htl-body { font-size:0.72rem; color:var(--text-mid); line-height:1.6; }
 .htl-body strong { color:var(--text); }
 @media print { .htl-wrap { overflow:visible; } .htl-track { display:block; } .htl-item { display:block; margin-bottom:12px; } }
-@media (max-width:768px) { .htl-item { min-width:200px; max-width:220px; } }
+@media (max-width:768px) { .htl-item { min-width:220px; } }
 
 /* Badges */
 .badge { display:inline-block; font-family:var(--font-m); font-size:0.6rem; padding:3px 10px; border-radius:3px; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; }
@@ -152,7 +152,7 @@ tr:hover td { background:rgba(197,160,40,0.04); }
 <div class="hero">
   <div class="hero-label">The Full Story</div>
   <h1>How a <span>Late Fine Payment</span> Turned Into<br>Criminal Charges, Lost Income &amp; 6 Months of Hell</h1>
-  <p class="hero-sub">Vikram Deshpande lost his job. He fell behind on fines. The government suspended his licence, then <em>reversed</em> the suspension the next day — but their own computer system couldn't process the reversal. For the next three months, every government agency admitted the error but none could fix it. He was pulled over repeatedly, charged criminally, lost his driving job, and faces court — all for paying fines late after a redundancy.</p>
+  <p class="hero-sub">Vikram Deshpande — a Master of Computer Science (Monash), Bachelor of Engineering (Melbourne), Certified Scrum Master, with 15+ years leading technology delivery at ANZ, NAB, Microsoft, and Telstra — lost his job. He fell behind on fines. The government suspended his licence, then <em>reversed</em> the suspension the next day — but their own computer system couldn't process the reversal. For the next three months, every government agency admitted the error but none could fix it. He was pulled over repeatedly, charged criminally, lost his driving job, and faces court — all for paying fines late after a redundancy.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-val">0</div><div class="hero-stat-label">Prior Convictions (40 Years)</div></div>
     <div class="hero-stat"><div class="hero-stat-val">1 Day</div><div class="hero-stat-label">How Long Suspension Should Have Lasted</div></div>
@@ -178,7 +178,18 @@ tr:hover td { background:rgba(197,160,40,0.04); }
   <span class="section-label">Section 01 — What Happened</span>
   <h2>The Full Story, in Plain English</h2>
   
-  <p><strong>Vikram Deshpande</strong> is a 40-year-old technology professional with zero criminal history — not a single conviction in his entire life. He has cooperated with Victoria Police as a victim of crime, and even assisted as a witness in a fatal stabbing investigation. He held an average annual income of $200,000 and a 20+ year unblemished career.</p>
+  <p><strong>Vikram Deshpande</strong> is a 40-year-old technology leader with zero criminal history — not a single conviction in his entire life. He holds a <strong>Master of Computer Science (Hons)</strong> from Monash University and a <strong>Bachelor of Engineering (Computer Science)</strong> from the University of Melbourne. Over a <strong>15+ year career</strong>, he served as Senior Delivery Lead &amp; AI/ML Solutions Architect at <strong>ANZ</strong> (7+ years), Senior Project Manager at <strong>NAB</strong>, Lead Business Analyst at <strong>Microsoft</strong>, and Business Analyst at <strong>Telstra</strong> and <strong>MYOB</strong>. He led 5+ delivery squads and 40+ practitioners, managed a $5M+ portfolio, and earned $200,000+ annually. He cooperated with Victoria Police as a victim of crime and assisted as a witness in a fatal stabbing investigation.</p>
+
+  
+  <div class="card navy" style="margin:20px 0;">
+    <div class="card-label">Who Is Vikram Deshpande?</div>
+    <div class="card-body">
+      <p style="margin-bottom:8px;"><strong>Education:</strong> Master of Computer Science (Hons), Monash University &bull; Bachelor of Engineering (Computer Science), University of Melbourne</p>
+      <p style="margin-bottom:8px;"><strong>Career:</strong> Senior Delivery Lead &amp; AI/ML Solutions Architect at <strong>ANZ</strong> (2017–2025) &bull; Senior PM at <strong>NAB</strong> &bull; Lead BA at <strong>Microsoft</strong> &bull; BA at <strong>Telstra</strong> &bull; Developer Support at <strong>MYOB</strong></p>
+      <p style="margin-bottom:8px;"><strong>Achievements:</strong> Led 5+ squads &amp; 40+ practitioners &bull; Managed $5M+ delivery portfolio &bull; Reduced enterprise delivery cycle times by 30%+ &bull; Built AI/ML telemetry systems (P95 &lt;200ms at scale)</p>
+      <p style="margin-bottom:0;"><strong>Certifications:</strong> Certified Scrum Master (CSM) &bull; AWS/GCP Cloud certifications (in progress) &bull; <a href="https://forgotten-mistory.web.app/" target="_blank" style="color:var(--gold);">View full portfolio &rarr;</a></p>
+    </div>
+  </div>
 
   <h3>It Started with a Redundancy</h3>
   <p>In March 2025, Vik was made redundant. Like many Australians who lose their jobs unexpectedly, he struggled financially. He fell behind on some fines — small infringement notices that most people pay without thinking. He tried to set up a Centrepay payment plan in June 2025, but Fines Victoria held the application because the fortnightly amount needed a phone confirmation. Some of the fines weren't even his — they were incorrectly allocated infringements that belonged to someone else.</p>
@@ -227,7 +238,7 @@ tr:hover td { background:rgba(197,160,40,0.04); }
     <div class="htl-track">
       <div class="htl-axis"></div>
 
-      <div class="htl-item"><div class="htl-stem"></div><div class="htl-dot navy"></div><div class="htl-card navy"><div class="htl-date">08 Mar 2025</div><div class="htl-title">Vik is Made Redundant</div><div class="htl-body">20+ year career, $200K income. Financial hardship &amp; address instability begin.</div></div></div>
+      <div class="htl-item"><div class="htl-stem"></div><div class="htl-dot navy"></div><div class="htl-card navy"><div class="htl-date">08 Mar 2025</div><div class="htl-title">Vik is Made Redundant</div><div class="htl-body">15+ year career at ANZ, NAB, Microsoft, Telstra. $200K income gone. Financial hardship &amp; address instability begin.</div></div></div>
 
       <div class="htl-item"><div class="htl-stem"></div><div class="htl-dot green"></div><div class="htl-card green"><div class="htl-date">19 Jun 2025</div><div class="htl-title">Tries to Set Up Fines Payment Plan</div><div class="htl-body">Proactively applies for Centrepay $150/fortnight — <strong>3 months before any suspension</strong>.</div></div></div>
 
@@ -290,7 +301,7 @@ tr:hover td { background:rgba(197,160,40,0.04); }
     <div class="impact-card">
       <div class="impact-icon">💼</div>
       <div class="impact-title">Career Devastation</div>
-      <div class="impact-desc">Lost his rideshare/taxi driving income. New $200K/year ATO contract (via Accenture) is conditional on AGSVA security clearance — a criminal conviction means automatic failure.</div>
+      <div class="impact-desc">A 15-year career at ANZ, NAB, Microsoft, and Telstra — destroyed. Lost driving income. New $200K/year ATO contract (via Accenture) conditional on AGSVA clearance — a conviction means automatic failure for someone who led enterprise AI delivery at Australia's largest bank.</div>
     </div>
     <div class="impact-card">
       <div class="impact-icon">💰</div>
@@ -443,6 +454,10 @@ tr:hover td { background:rgba(197,160,40,0.04); }
   <p>If you're reading this, someone who cares about Vik's situation has shared this with you. Here's how different people can help:</p>
 
   <div class="impact-grid">
+    <div class="impact-card" style="border-left:4px solid var(--navy);">
+      <h4>See Vik's Career</h4>
+      <p>Review his <a href="https://forgotten-mistory.web.app/" target="_blank" style="color:var(--navy);font-weight:700;">professional portfolio</a> to understand the career these charges are destroying — 15 years at Australia's top companies, two university degrees, enterprise AI delivery leadership.</p>
+    </div>
     <div class="impact-card" style="border-left:4px solid var(--navy);">
       <div class="impact-icon">⚖️</div>
       <div class="impact-title">If You're a Lawyer</div>
