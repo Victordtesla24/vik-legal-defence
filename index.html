@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vik Deshpande — The Full Story | When Government Systems Fail Citizens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1F3A; --navy-mid: #152D4F; --gold: #C5A028; --gold-light: #E4C458;
+  --white: #FFFFFF; --paper: #F5F7FA; --border: #D6DDE8; --text: #1A2B44;
+  --text-mid: #3D5275; --text-muted: #6B7FA3; --red: #C0392B; --red-light: #FDECEA;
+  --amber: #D4700A; --amber-light: #FEF3E2; --green: #1A7A4A; --green-light: #E6F4ED;
+  --blue: #1558B0; --blue-light: #E8F0FB; --teal: #0E7B6B;
+  --font-h: 'Playfair Display', Georgia, serif;
+  --font-b: 'Inter', system-ui, sans-serif;
+  --font-m: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:15px; -webkit-font-smoothing:antialiased; scroll-behavior:smooth; }
+body { font-family:var(--font-b); background:var(--paper); color:var(--text); }
+</style>
+<style>
+/* Header */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color:var(--white); padding:60px 40px 50px; text-align:center; position:relative; overflow:hidden; }
+.hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold)); }
+.hero-label { font-family:var(--font-m); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+.hero h1 { font-family:var(--font-h); font-size:2.4rem; font-weight:700; margin-bottom:16px; line-height:1.3; }
+.hero h1 span { color:var(--gold); }
+.hero-sub { font-size:1rem; color:rgba(255,255,255,0.7); max-width:700px; margin:0 auto 24px; line-height:1.7; }
+.hero-stats { display:flex; justify-content:center; gap:32px; flex-wrap:wrap; margin-top:24px; }
+.hero-stat { text-align:center; }
+.hero-stat-val { font-family:var(--font-h); font-size:2rem; font-weight:700; color:var(--gold); }
+.hero-stat-label { font-family:var(--font-m); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-top:4px; }
+
+/* Navigation */
+.nav { background:var(--navy-mid); display:flex; justify-content:center; gap:0; position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(197,160,40,0.3); overflow-x:auto; }
+.nav a { font-family:var(--font-b); font-size:0.75rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:rgba(255,255,255,0.6); padding:14px 24px; text-decoration:none; border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; }
+.nav a:hover { color:rgba(255,255,255,0.9); background:rgba(255,255,255,0.05); }
+.nav a.active { color:var(--gold); border-bottom-color:var(--gold); }
+
+/* Content */
+.container { max-width:1000px; margin:0 auto; padding:0 24px; }
+section { padding:48px 0; }
+section + section { border-top:1px solid var(--border); }
+.section-label { font-family:var(--font-m); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; display:block; }
+h2 { font-family:var(--font-h); font-size:1.8rem; color:var(--navy); margin-bottom:20px; }
+h3 { font-family:var(--font-h); font-size:1.25rem; color:var(--navy); margin:28px 0 12px; }
+p { font-size:0.93rem; line-height:1.8; color:var(--text-mid); margin-bottom:14px; }
+strong { color:var(--text); }
+</style>
+<style>
+/* Cards */
+.card { background:var(--white); border:1px solid var(--border); border-radius:8px; padding:24px; margin-bottom:16px; box-shadow:0 2px 8px rgba(11,31,58,0.05); }
+.card.red { border-left:4px solid var(--red); }
+.card.amber { border-left:4px solid var(--amber); }
+.card.green { border-left:4px solid var(--green); }
+.card.navy { border-left:4px solid var(--navy); }
+.card.gold { border-left:4px solid var(--gold); }
+.card-label { font-family:var(--font-m); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px; }
+.card-title { font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:8px; }
+.card-body { font-size:0.87rem; line-height:1.7; color:var(--text-mid); }
+
+/* Impact grid */
+.impact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin:24px 0; }
+.impact-card { background:var(--white); border:1px solid var(--border); border-radius:8px; padding:20px; text-align:center; }
+.impact-icon { font-size:2rem; margin-bottom:8px; }
+.impact-title { font-weight:700; font-size:0.85rem; color:var(--navy); margin-bottom:6px; }
+.impact-desc { font-size:0.8rem; color:var(--text-mid); line-height:1.6; }
+
+/* Timeline */
+.tl { position:relative; padding-left:32px; margin:24px 0; }
+.tl::before { content:''; position:absolute; left:12px; top:0; bottom:0; width:2px; background:linear-gradient(180deg, var(--text-muted) 0%, var(--red) 20%, var(--amber) 50%, var(--green) 100%); }
+.tl-item { position:relative; margin-bottom:24px; }
+.tl-dot { position:absolute; left:-26px; top:6px; width:12px; height:12px; border-radius:50%; border:2px solid var(--white); box-shadow:0 0 0 2px var(--border); }
+.tl-dot.red { background:var(--red); box-shadow:0 0 0 2px var(--red); }
+.tl-dot.green { background:var(--green); box-shadow:0 0 0 2px var(--green); }
+.tl-dot.amber { background:var(--amber); box-shadow:0 0 0 2px var(--amber); }
+.tl-dot.navy { background:var(--navy); box-shadow:0 0 0 2px var(--navy); }
+.tl-dot.gold { background:var(--gold); box-shadow:0 0 0 2px var(--gold); }
+.tl-date { font-family:var(--font-m); font-size:0.65rem; color:var(--gold); letter-spacing:0.06em; margin-bottom:3px; }
+.tl-title { font-weight:700; font-size:0.9rem; color:var(--navy); margin-bottom:4px; }
+.tl-body { font-size:0.82rem; color:var(--text-mid); line-height:1.7; }
+
+/* Badges */
+.badge { display:inline-block; font-family:var(--font-m); font-size:0.6rem; padding:3px 10px; border-radius:3px; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; }
+.badge.red { background:var(--red); color:#fff; }
+.badge.amber { background:var(--amber); color:#fff; }
+.badge.green { background:var(--green); color:#fff; }
+
+/* Callout */
+.callout { border-radius:8px; padding:20px 24px; margin:20px 0; }
+.callout.red { background:var(--red-light); border-left:4px solid var(--red); }
+.callout.green { background:var(--green-light); border-left:4px solid var(--green); }
+.callout.amber { background:var(--amber-light); border-left:4px solid var(--amber); }
+.callout.blue { background:var(--blue-light); border-left:4px solid var(--blue); }
+.callout h4 { font-size:0.9rem; color:var(--navy); margin-bottom:8px; }
+.callout p { font-size:0.85rem; margin-bottom:0; }
+
+/* Table */
+table { width:100%; border-collapse:collapse; margin:16px 0; font-size:0.82rem; }
+th { background:var(--navy); color:var(--gold); font-family:var(--font-m); font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; padding:10px 14px; text-align:left; }
+td { padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text-mid); }
+tr:hover td { background:rgba(197,160,40,0.04); }
+
+/* Proportionality */
+.prop-bar { display:flex; align-items:stretch; margin:20px 0; border-radius:8px; overflow:hidden; min-height:80px; }
+.prop-left { background:var(--green-light); flex:1; display:flex; align-items:center; justify-content:center; padding:16px; text-align:center; border:2px solid var(--green); border-radius:8px 0 0 8px; }
+.prop-right { background:var(--red-light); flex:3; display:flex; align-items:center; justify-content:center; padding:16px; text-align:center; border:2px solid var(--red); border-radius:0 8px 8px 0; }
+.prop-label { font-family:var(--font-m); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:4px; }
+.prop-val { font-family:var(--font-h); font-weight:700; font-size:1rem; }
+
+/* Footer */
+.footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:32px 40px; text-align:center; font-size:0.75rem; }
+.footer a { color:var(--gold); text-decoration:none; }
+
+/* Print */
+@media print { .nav { display:none; } section { break-inside:avoid; } }
+@media (max-width:768px) {
+  .hero h1 { font-size:1.6rem; } .hero { padding:40px 20px 30px; }
+  .hero-stats { gap:16px; } .container { padding:0 16px; }
+  .nav a { padding:12px 16px; font-size:0.68rem; }
+  .impact-grid { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+  <div class="hero-label">The Full Story</div>
+  <h1>How a <span>Late Fine Payment</span> Turned Into<br>Criminal Charges, Lost Income &amp; 6 Months of Hell</h1>
+  <p class="hero-sub">Vikram Deshpande lost his job. He fell behind on fines. The government suspended his licence, then <em>reversed</em> the suspension the next day — but their own computer system couldn't process the reversal. For the next three months, every government agency admitted the error but none could fix it. He was pulled over repeatedly, charged criminally, lost his driving job, and faces court — all for paying fines late after a redundancy.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-val">0</div><div class="hero-stat-label">Prior Convictions (40 Years)</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">1 Day</div><div class="hero-stat-label">How Long Suspension Should Have Lasted</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">91 Days</div><div class="hero-stat-label">How Long It Actually Lasted</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">6+</div><div class="hero-stat-label">Times Pulled Over</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">$200K+</div><div class="hero-stat-label">Income Lost</div></div>
+  </div>
+</div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<div class="nav" id="nav">
+  <a href="#story" class="active">The Story</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#disproportionate">The Punishment vs The "Crime"</a>
+  <a href="#system-failure">System Failure</a>
+  <a href="#evidence">Evidence</a>
+  <a href="#legal">Legal Position</a>
+  <a href="#help">How You Can Help</a>
+</div>
+<!-- ═══════════ SECTION 1: THE STORY ═══════════ -->
+<div class="container">
+<section id="story">
+  <span class="section-label">Section 01 — What Happened</span>
+  <h2>The Full Story, in Plain English</h2>
+  
+  <p><strong>Vikram Deshpande</strong> is a 40-year-old technology professional with zero criminal history — not a single conviction in his entire life. He has cooperated with Victoria Police as a victim of crime, and even assisted as a witness in a fatal stabbing investigation. He held an average annual income of $200,000 and a 20+ year unblemished career.</p>
+
+  <h3>It Started with a Redundancy</h3>
+  <p>In March 2025, Vik was made redundant. Like many Australians who lose their jobs unexpectedly, he struggled financially. He fell behind on some fines — small infringement notices that most people pay without thinking. He tried to set up a Centrepay payment plan in June 2025, but Fines Victoria held the application because the fortnightly amount needed a phone confirmation. Some of the fines weren't even his — they were incorrectly allocated infringements that belonged to someone else.</p>
+
+  <h3>The Suspension That Should Have Lasted One Day</h3>
+  <p>On <strong>18 September 2025</strong>, Fines Victoria suspended his driver's licence because accumulated demerit points exceeded the threshold — points that were inflated by the incorrect fines and by unpaid fines that built up while he was between addresses after losing his home following the redundancy.</p>
+  <p>Vik acted <strong>immediately</strong>. On the same day — 18 September — he applied for a payment plan to resolve the outstanding fines.</p>
+  <p>Fines Victoria accepted his action and on <strong>19 September 2025</strong> — just one day later — directed VicRoads (the licensing authority) to <strong>lift the suspension</strong>.</p>
+
+  <div class="callout green">
+    <h4>The Key Fact</h4>
+    <p>The authority that suspended the licence (Fines Victoria) told the authority that manages licences (VicRoads) to reverse the suspension on <strong>19 September 2025</strong>. This was <strong>one day before</strong> the first alleged offence.</p>
+  </div>
+
+  <h3>But VicRoads' Computer System Couldn't Process It</h3>
+  <p>Here's where the nightmare begins. VicRoads' computer system <strong>could not reverse an automatically-triggered suspension</strong>, even though Fines Victoria had directed it. When Vik called VicRoads on 26 September (after being pulled over), they made three remarkable admissions:</p>
+
+  <div class="card red">
+    <div class="card-label">VicRoads Admissions — 26 September 2025</div>
+    <div class="card-body">
+      <p style="margin-bottom:8px;"><strong>1. "Our system cannot undo this."</strong> — The suspension was automatically triggered and their system physically could not reverse it, even though Fines Victoria had directed the lift.</p>
+      <p style="margin-bottom:8px;"><strong>2. "Your clearance letter is a valid legal document."</strong> — VicRoads told Vik that the letter they issued on 24 September was legally valid and he could show it to police if stopped.</p>
+      <p style="margin-bottom:0;"><strong>3. "Nothing can be done for 3 months."</strong> — They said they were "investigating" but the suspension would run its automatic 3-month course (18 September to 18 December 2025), regardless of what Fines Victoria directed.</p>
+    </div>
+  </div>
+
+  <h3>Three Months of Being Trapped</h3>
+  <p>For the next <strong>91 days</strong>, Vik was caught in an impossible situation. Every government agency he contacted acknowledged the error but none could fix it:</p>
+  <p><strong>Fines Victoria</strong> confirmed they had directed the lift on 19 September. <strong>VicRoads</strong> admitted their system was at fault but said they couldn't override it. <strong>Victoria Police</strong> kept pulling him over based on their database (LEAP), which still showed his licence as suspended — even though VicRoads had issued a clearance letter.</p>
+  <p>During this period, Vik filed <strong>six formal submissions</strong> to Fines Victoria — payment arrangements, enforcement reviews, internal reviews, infringement extensions — a relentless paper trail of someone doing everything in their power to resolve the situation through proper channels.</p>
+  <p>One police officer, Senior Constable D'Cruze, actually listened. On 13 October 2025, he emailed Vik confirming that if VicRoads showed the licence was clear, <strong>he would not proceed with the charge</strong>. Vik sent him the VicRoads clearance letter. But on 20 October, D'Cruze emailed again: <em>"your licence is still showing as suspended"</em> in the police database — 26 days after VicRoads cleared it.</p>
+  <p>On <strong>18 December 2025</strong>, the suspension automatically expired — like a scheduled computer job completing. No human being intervened. The system just… finished.</p>
+</section>
+<!-- ═══════════ SECTION 2: TIMELINE ═══════════ -->
+<section id="timeline">
+  <span class="section-label">Section 02 — Timeline of Events</span>
+  <h2>What Happened, When</h2>
+  
+  <div class="tl">
+    <div class="tl-item"><div class="tl-dot navy"></div><div class="tl-date">08 March 2025</div><div class="tl-title">Vik is Made Redundant</div><div class="tl-body">20+ year career, $200K average income. Financial hardship begins. Address instability follows as tenancy is lost on 30 April.</div></div>
+
+    <div class="tl-item"><div class="tl-dot green"></div><div class="tl-date">19 June 2025</div><div class="tl-title">Tries to Set Up Fines Payment Plan</div><div class="tl-body">Proactively applies for Centrepay payment arrangement ($150/fortnight). Fines Victoria holds the application pending a phone confirmation — 3 months before any suspension.</div></div>
+
+    <div class="tl-item"><div class="tl-dot red"></div><div class="tl-date">18 September 2025</div><div class="tl-title">Licence Suspended — Acts Same Day</div><div class="tl-body">Fines Victoria suspends licence (demerit points over 12, partly from incorrect fines that weren't his). <strong>Vik applies for a payment plan the same day.</strong></div></div>
+
+    <div class="tl-item"><div class="tl-dot green"></div><div class="tl-date">19 September 2025</div><div class="tl-title">Fines Victoria Directs VicRoads: LIFT THE SUSPENSION</div><div class="tl-body">Fines Victoria — the authority that imposed the suspension — directs VicRoads to remove it. <strong>This is one day before the first alleged offence.</strong></div></div>
+
+    <div class="tl-item"><div class="tl-dot red"></div><div class="tl-date">20 September 2025</div><div class="tl-title">First Police Intercept — Burnley (Monash Freeway)</div><div class="tl-body">Highway Patrol pulls Vik over. Charged with driving whilst suspended. On this <em>same day</em>, VicRoads approves his Unregistered Vehicle Permit — proving they were processing his applications but not the suspension lift.</div></div>
+
+    <div class="tl-item"><div class="tl-dot green"></div><div class="tl-date">24 September 2025</div><div class="tl-title">VicRoads Issues Clearance Letter</div><div class="tl-body">Official letter (Ref: E/2905-5431-1095/PVR1336) confirms licence directions have ended. 5-day processing delay from the 19 Sep Fines Vic directive.</div></div>
+
+    <div class="tl-item"><div class="tl-dot amber"></div><div class="tl-date">26 September 2025</div><div class="tl-title">VicRoads Admits: "Our System Can't Fix This"</div><div class="tl-body">Vik calls VicRoads. Told: (1) system cannot reverse auto-triggered suspension, (2) clearance letter is legally valid, (3) nothing can be done for 3 months. VicRoads says they are "investigating."</div></div>
+
+    <div class="tl-item"><div class="tl-dot green"></div><div class="tl-date">23 Sep — 30 Sep 2025</div><div class="tl-title">Three Fines Victoria Formal Submissions Filed</div><div class="tl-body">Payment arrangement, enforcement review, and a 556KB infringement extension with supporting documents — fighting to correct incorrect fines and resolve the situation.</div></div>
+
+    <div class="tl-item"><div class="tl-dot green"></div><div class="tl-date">13 October 2025</div><div class="tl-title">Police Officer Agrees: Charge Should Not Proceed</div><div class="tl-body">Senior Constable D'Cruze (VP43372) emails Vik: "if its all clear, I will not proceed with a charge." Vik sends him the VicRoads clearance letter.</div></div>
+
+    <div class="tl-item"><div class="tl-dot red"></div><div class="tl-date">20 October 2025</div><div class="tl-title">Police Database STILL Shows Suspended</div><div class="tl-body">SC D'Cruze emails: "your licence is still showing as suspended" — 26 days after VicRoads cleared it. The police database was never updated.</div></div>
+
+    <div class="tl-item"><div class="tl-dot red"></div><div class="tl-date">3 November 2025</div><div class="tl-title">Second Police Intercept — Oakleigh</div><div class="tl-body">Pulled over again. Charged with driving whilst suspended PLUS drug presence (trace-level, no impairment). This intercept was based on the same database error that police already knew about.</div></div>
+
+    <div class="tl-item"><div class="tl-dot green"></div><div class="tl-date">12–21 November 2025</div><div class="tl-title">Three More Fines Victoria Formal Submissions</div><div class="tl-body">Internal review of infringement, two enforcement reviews. Six total formal submissions in two months — extraordinary diligence.</div></div>
+
+    <div class="tl-item"><div class="tl-dot amber"></div><div class="tl-date">18 December 2025</div><div class="tl-title">Suspension Automatically Expires</div><div class="tl-body">After exactly 3 months, the suspension lifts automatically. No human intervened. No agency fixed it. A computer job completed.</div></div>
+
+    <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-date">13 April 2026 — 9:30 AM</div><div class="tl-title">Court Hearing — Melbourne Magistrates' Court</div><div class="tl-body">Case R12649243. Charge: Drive whilst authorisation suspended (20 Sep 2025, Burnley).</div></div>
+
+    <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-date">14 April 2026 — 10:00 AM</div><div class="tl-title">Court Hearing — Moorabbin Magistrates' Court</div><div class="tl-body">Case R12693565. Charges: Drive whilst suspended + drug presence/oral fluid (3 Nov 2025, Oakleigh).</div></div>
+  </div>
+</section>
+<!-- ═══════════ SECTION 3: DISPROPORTIONATE ═══════════ -->
+<section id="disproportionate">
+  <span class="section-label">Section 03 — Proportionality</span>
+  <h2>The Punishment vs The "Crime"</h2>
+
+  <p>To understand how unjust this situation is, compare what Vik actually did wrong with what has happened to him as a result.</p>
+
+  <div class="prop-bar">
+    <div class="prop-left">
+      <div><span class="prop-label" style="color:var(--green);">What Vik Did</span><div class="prop-val" style="color:var(--green);">Paid fines late after losing his job</div></div>
+    </div>
+    <div class="prop-right">
+      <div><span class="prop-label" style="color:var(--red);">What Happened to Him</span><div class="prop-val" style="color:var(--red);">Criminal charges, income destroyed, career threatened, security clearance at risk</div></div>
+    </div>
+  </div>
+
+  <h3>The Actual "Offence"</h3>
+  <div class="card green">
+    <div class="card-body">
+      <p>Vik fell behind on fine payments after being made redundant in March 2025. Some of the fines weren't even his — they were incorrectly allocated. He tried to set up a payment plan. When the suspension hit on 18 September, he resolved it <strong>the same day</strong>. Fines Victoria directed the lift <strong>the next day</strong>. That's it. That's the entirety of what he did wrong.</p>
+    </div>
+  </div>
+
+  <h3>The Consequences He's Already Suffered</h3>
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="impact-icon">💼</div>
+      <div class="impact-title">Career Devastation</div>
+      <div class="impact-desc">Lost his rideshare/taxi driving income. New $200K/year ATO contract (via Accenture) is conditional on AGSVA security clearance — a criminal conviction means automatic failure.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">💰</div>
+      <div class="impact-title">$200,000+ Income Lost</div>
+      <div class="impact-desc">Between lost driving income, legal costs, and the threatened ATO engagement, total financial impact exceeds $200,000.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🔒</div>
+      <div class="impact-title">Security Clearance at Risk</div>
+      <div class="impact-desc">AGSVA Baseline Clearance (CSID CS1175697) submitted. A conviction = automatic failure = loss of the ATO role that was supposed to rebuild his career.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🚗</div>
+      <div class="impact-title">3 Months Unable to Drive</div>
+      <div class="impact-desc">91 days trapped by a system error. Couldn't drive for work, couldn't drive for daily life. No agency could fix it.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">⚖️</div>
+      <div class="impact-title">Criminal Charges Filed</div>
+      <div class="impact-desc">Two separate court cases across two courts. Multiple charges including "drive whilst suspended" — for a suspension that should have lasted one day.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">😰</div>
+      <div class="impact-title">Mental Health Impact</div>
+      <div class="impact-desc">Six months of stress, uncertainty, repeated police encounters, bureaucratic runaround, and the threat of imprisonment — for late fine payments after losing his job.</div>
+    </div>
+  </div>
+
+  <div class="callout red">
+    <h4>The Core Injustice</h4>
+    <p>The government suspended Vik's licence, then <strong>directed that suspension be reversed the very next day</strong>. Their own system couldn't process the reversal. Their own staff told Vik his clearance letter was legally valid. Their own police officer agreed the charge shouldn't proceed. And yet, six months later, Vik faces criminal court — not because he did anything wrong, but because a computer system couldn't undo what a human authorised.</p>
+  </div>
+</section>
+<!-- ═══════════ SECTION 4: SYSTEM FAILURE ═══════════ -->
+<section id="system-failure">
+  <span class="section-label">Section 04 — Systemic Failure</span>
+  <h2>Three Government Agencies, One Broken System</h2>
+
+  <p>This is not a case of one mistake by one agency. It's a cascading failure across three separate arms of the Victorian government, each of which acknowledged the problem but none of which could fix it.</p>
+
+  <div class="card amber" style="margin-bottom:16px;">
+    <div class="card-label">Agency 1 — Fines Victoria</div>
+    <div class="card-title">Imposed the suspension, then directed it be lifted — but the lift was ignored</div>
+    <div class="card-body">Fines Victoria suspended the licence on 18 Sep due to demerit points (partly from incorrect fines). When Vik resolved the issue the same day, they directed VicRoads to lift the suspension on 19 Sep. <strong>Their directive was not actioned for 5 days</strong>, and even then, VicRoads' system couldn't actually reverse it. Fines Victoria did their part — but the message was lost between agencies.</div>
+  </div>
+
+  <div class="card red" style="margin-bottom:16px;">
+    <div class="card-label">Agency 2 — VicRoads (Dept. of Transport)</div>
+    <div class="card-title">Admitted their system was broken but couldn't fix it</div>
+    <div class="card-body">VicRoads admitted on 26 Sep that their computer system <strong>physically could not reverse an auto-triggered suspension</strong>. They told Vik his clearance letter was a valid legal document. They said they were "investigating" but nothing could be done for 3 months. The suspension would run its automatic course regardless of what Fines Victoria directed. On the very day of the first offence (20 Sep), VicRoads approved Vik's Unregistered Vehicle Permit — proving they were actively processing his applications while failing to process the suspension lift.</div>
+  </div>
+
+  <div class="card red">
+    <div class="card-label">Agency 3 — Victoria Police</div>
+    <div class="card-title">Database never updated — kept pulling Vik over based on information they knew was wrong</div>
+    <div class="card-body">The police LEAP database retained a "Zombie Flag" showing the licence as suspended, even after VicRoads cleared it. On 20 October — a full 26 days after VicRoads clearance — police officer SC D'Cruze confirmed in email that the licence was <em>still showing as suspended</em> in LEAP. Despite holding the VicRoads clearance letter and D'Cruze's own acknowledgment, police continued to intercept Vik based on this erroneous data. The Oakleigh intercept on 3 November was conducted using information that police already knew was disputed.</div>
+  </div>
+
+  <div class="callout blue">
+    <h4>What does "Zombie Flag" mean?</h4>
+    <p>Victoria Police uses a database called LEAP (Law Enforcement Assistance Program). When a licence is suspended, a flag is added. When VicRoads lifts the suspension, that flag should be removed. In Vik's case, the flag was <strong>never removed</strong> — it persisted like a zombie, triggering automatic alerts every time his licence plate was scanned by police. Every intercept after 24 September 2025 was based on this dead-but-still-walking database entry.</p>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 5: EVIDENCE ═══════════ -->
+<section id="evidence">
+  <span class="section-label">Section 05 — Documentary Evidence</span>
+  <h2>The Evidence Trail</h2>
+  <p>Every claim in this document is backed by evidence — emails, official letters, government web form receipts, and police correspondence. Here is the key evidence inventory:</p>
+
+  <table>
+    <thead><tr><th>ID</th><th>Document</th><th>What It Proves</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>EX-A</td><td>VicRoads Clearance Letter (24 Sep 2025)</td><td>Suspension directions ended; licence cleared</td><td><span class="badge green">On file</span></td></tr>
+      <tr><td>EM-1</td><td>SC D'Cruze Email Chain (12–20 Oct 2025, 5 messages)</td><td>Police officer agreed charge should not proceed; police database still wrong 26 days after clearance</td><td><span class="badge green">On file</span></td></tr>
+      <tr><td>FV-1</td><td>Fines Vic Centrepay email (19 Jun 2025)</td><td>Proactive fines management months before suspension</td><td><span class="badge green">On file</span></td></tr>
+      <tr><td>FV-3</td><td>Fines Vic directive to lift suspension (19 Sep 2025)</td><td>Suspension reversal directed one day before first offence</td><td><span class="badge amber">Need official record</span></td></tr>
+      <tr><td>FV-4</td><td>VicRoads Vehicle Permit UXP0325972 (20 Sep 2025)</td><td>VicRoads processing applications on offence day but not the suspension lift</td><td><span class="badge green">On file</span></td></tr>
+      <tr><td>FV-5–11</td><td>Six Fines Vic web form submissions (23 Sep – 21 Nov)</td><td>Relentless good-faith engagement with administrative processes</td><td><span class="badge green">On file</span></td></tr>
+      <tr><td>FV-6</td><td>VicRoads "Fines Vic directions" email (25 Sep 2025)</td><td>VicRoads confirming they received Fines Vic's directions</td><td><span class="badge green">On file</span></td></tr>
+      <tr><td>EX-F</td><td>AGSVA Clearance Submission (CSID CS1175697)</td><td>Security clearance application — conviction = failure</td><td><span class="badge green">On file</span></td></tr>
+      <tr><td>EX-G</td><td>PSC Complaint #250310</td><td>Professional Standards complaint against VP re: conduct</td><td><span class="badge green">On file</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout amber">
+    <h4>Evidence Still Needed</h4>
+    <p><strong>Fines Victoria Sanction History</strong> — official record confirming the 18 Sep suspension and 19 Sep lift directive. This is the single most important outstanding document.</p>
+    <p><strong>VicRoads Call Records &amp; Case Notes</strong> — records of calls to VicRoads in Sep–Dec 2025, documenting their admission that the system could not reverse the suspension.</p>
+  </div>
+</section>
+<!-- ═══════════ SECTION 6: LEGAL POSITION ═══════════ -->
+<section id="legal">
+  <span class="section-label">Section 06 — Legal Position</span>
+  <h2>The Legal Defence — Explained Simply</h2>
+
+  <p>For those who aren't lawyers, here's what the legal defence looks like and why it's strong.</p>
+
+  <h3>The Charges</h3>
+  <table>
+    <thead><tr><th>Case</th><th>Court</th><th>Date</th><th>Charges</th><th>Hearing</th></tr></thead>
+    <tbody>
+      <tr><td>R12649243</td><td>Melbourne Magistrates'</td><td>20 Sep 2025</td><td>Drive whilst licence suspended</td><td>13 Apr 2026, 9:30 AM</td></tr>
+      <tr><td>R12693565</td><td>Moorabbin Magistrates'</td><td>3 Nov 2025</td><td>Drive whilst suspended + drug presence (trace level)</td><td>14 Apr 2026, 10:00 AM</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The Defence — In Plain English</h3>
+
+  <div class="card navy" style="margin-bottom:16px;">
+    <div class="card-label">Defence 1 — "Honest and Reasonable Mistake"</div>
+    <div class="card-title">The law says you can't be convicted if you honestly and reasonably believed the facts were different</div>
+    <div class="card-body">
+      <p>Under Australian law (<em>Proudman v Dayman</em>, 1941), if someone honestly and reasonably believed they were entitled to drive, they have a complete defence — even if their licence was technically suspended. Vik's belief was reasonable because:</p>
+      <p style="margin-bottom:4px;">• Fines Victoria directed the suspension be lifted the day before the offence</p>
+      <p style="margin-bottom:4px;">• VicRoads issued a clearance letter confirming the suspension had ended</p>
+      <p style="margin-bottom:4px;">• VicRoads told him the clearance letter was a valid legal document</p>
+      <p style="margin-bottom:4px;">• A police officer confirmed in writing that the charge should not proceed</p>
+      <p style="margin-bottom:0;">• He filed 6 formal Fines Victoria submissions trying to resolve the situation</p>
+    </div>
+  </div>
+
+  <div class="card navy" style="margin-bottom:16px;">
+    <div class="card-label">Defence 2 — "Diversion" (No Conviction Pathway)</div>
+    <div class="card-title">The court can decide to deal with the matter without recording a conviction</div>
+    <div class="card-body">
+      <p>Under Victorian law, the court can "divert" a case — meaning the charges are dealt with through conditions (like a good behaviour bond) without recording a criminal conviction. This is appropriate where the accused has no criminal history, the offence is at the lower end of seriousness, and a conviction would cause disproportionate harm. Vik's case ticks every box: zero priors, administrative rather than deliberate offending, and a conviction would destroy his security clearance and career.</p>
+    </div>
+  </div>
+
+  <div class="card navy">
+    <div class="card-label">Defence 3 — "Unlawful Basis for the Second Intercept"</div>
+    <div class="card-title">The police stop on 3 November was based on information police knew was wrong</div>
+    <div class="card-body">
+      <p>By 3 November 2025, Victoria Police already had SC D'Cruze's email confirming the LEAP database was incorrect. They had received the VicRoads clearance letter. Yet they intercepted Vik again based on the same erroneous database flag. Under the law (<em>DPP v Kaba</em>, 2014), evidence obtained through an unlawful intercept can be excluded from court. If the stop was unlawful, the drug charges that flowed from it may also be excluded.</p>
+    </div>
+  </div>
+
+  <h3>What the Prosecution Must Prove (and Why They Can't)</h3>
+  <div class="callout amber">
+    <h4>The prosecution must prove beyond reasonable doubt that Vik <em>knew or ought to have known</em> his licence was suspended.</h4>
+    <p>But by the date of the first offence (20 Sep), the authority that imposed the suspension had already directed it be lifted. VicRoads later told him the clearance letter was valid. A police officer agreed the charge shouldn't proceed. Six formal government submissions show extraordinary diligence. The prosecution's case requires the court to accept that a person who did everything right — who resolved the issue the same day, who was told by VicRoads his letter was valid, who a police officer agreed shouldn't be charged — somehow "ought to have known" he was suspended. That is an unreasonable standard.</p>
+  </div>
+</section>
+<!-- ═══════════ SECTION 7: HOW YOU CAN HELP ═══════════ -->
+<section id="help">
+  <span class="section-label">Section 07 — How You Can Help</span>
+  <h2>How You Can Help</h2>
+
+  <p>If you're reading this, someone who cares about Vik's situation has shared this with you. Here's how different people can help:</p>
+
+  <div class="impact-grid">
+    <div class="impact-card" style="border-left:4px solid var(--navy);">
+      <div class="impact-icon">⚖️</div>
+      <div class="impact-title">If You're a Lawyer</div>
+      <div class="impact-desc">Vik needs a criminal defence solicitor experienced in Victorian Magistrates' Court matters, particularly Road Safety Act offences. The hearings are on 13 and 14 April 2026. The defence is strong but needs professional presentation. Pro bono or reduced-fee assistance would be life-changing.</div>
+    </div>
+    <div class="impact-card" style="border-left:4px solid var(--gold);">
+      <div class="impact-icon">📝</div>
+      <div class="impact-title">If You Can Write a Character Reference</div>
+      <div class="impact-desc">Character references from people who know Vik personally or professionally carry significant weight with Magistrates. A reference should speak to his character, integrity, community contribution, and the impact a conviction would have.</div>
+    </div>
+    <div class="impact-card" style="border-left:4px solid var(--teal);">
+      <div class="impact-icon">🤝</div>
+      <div class="impact-title">If You Know Someone Who Can Help</div>
+      <div class="impact-desc">Share this page. Connect Vik with lawyers, legal aid services, advocacy groups, or anyone who has navigated similar situations. Sometimes the most valuable help is an introduction.</div>
+    </div>
+    <div class="impact-card" style="border-left:4px solid var(--green);">
+      <div class="impact-icon">💚</div>
+      <div class="impact-title">If You're a Friend or Family Member</div>
+      <div class="impact-desc">Your support matters more than you know. Understanding what happened — and that this isn't about reckless behaviour but a government system failure — helps Vik feel less alone in this fight.</div>
+    </div>
+  </div>
+
+  <div class="callout blue">
+    <h4>Contact</h4>
+    <p>If you can help in any way, please reach out to Vik directly at <strong>sarkar.vikram@gmail.com</strong></p>
+  </div>
+
+  <h3>The Bigger Picture</h3>
+  <p>This case isn't just about one person. It's about what happens when government databases control citizens' lives but can't be corrected when they're wrong. When a computer system overrides a human directive. When three agencies all admit an error but none can fix it. When a citizen does everything right — resolves the issue immediately, files every form, calls every number, gets written confirmation from police — and still ends up facing criminal charges.</p>
+  <p>If it can happen to someone with a 40-year clean record and a professional career, it can happen to anyone.</p>
+</section>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <p>Police v Deshpande — Cases R12649243 &amp; R12693565 — Victoria Magistrates' Courts</p>
+  <p style="margin-top:8px;">This page contains factual information supported by documentary evidence. Last updated 23 March 2026.</p>
+  <p style="margin-top:8px; font-size:0.65rem; opacity:0.6;">This document is provided for informational purposes. It does not constitute legal advice.</p>
+</div>
+
+<script>
+// Smooth nav highlighting
+document.addEventListener('scroll', function() {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav a');
+  var scrollY = window.scrollY + 80;
+  sections.forEach(function(s) {
+    var top = s.offsetTop - 100;
+    var bottom = top + s.offsetHeight;
+    if (scrollY >= top && scrollY < bottom) {
+      navLinks.forEach(function(a) { a.classList.remove('active'); });
+      var link = document.querySelector('.nav a[href="#' + s.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+});
+// Smooth scroll
+document.querySelectorAll('.nav a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+});
+</script>
+</body>
+</html>
