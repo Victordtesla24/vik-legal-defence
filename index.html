@@ -71,22 +71,20 @@ strong { color:var(--text); }
 .impact-desc { font-size:0.8rem; color:var(--text-mid); line-height:1.6; }
 
 /* Horizontal Timeline */
-.htl-wrap { overflow-x:auto; padding:20px 0 28px; -webkit-overflow-scrolling:touch; position:relative; }
+.htl-wrap { overflow-x:auto; padding:20px 0 28px; -webkit-overflow-scrolling:touch; }
 .htl-wrap::-webkit-scrollbar { height:6px; }
 .htl-wrap::-webkit-scrollbar-track { background:var(--paper); border-radius:3px; }
 .htl-wrap::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
 .htl-hint { text-align:center; font-family:var(--font-m); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px; }
-.htl-track { display:flex; align-items:stretch; position:relative; min-width:max-content; padding:0 24px; }
-.htl-axis { position:absolute; top:50%; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--text-muted) 0%, var(--red) 20%, var(--amber) 45%, var(--red) 60%, var(--green) 80%, var(--gold) 100%); border-radius:2px; transform:translateY(-50%); z-index:1; }
-.htl-item { position:relative; min-width:220px; max-width:250px; flex-shrink:0; z-index:10; padding:0 6px; }
-.htl-item:nth-child(odd) { padding-top:0; padding-bottom:calc(50% + 28px); align-self:flex-start; }
-.htl-item:nth-child(even) { padding-top:calc(50% + 28px); padding-bottom:0; align-self:flex-end; }
-.htl-stem { position:absolute; width:2px; background:var(--border-dark,#A8B4C6); left:24px; z-index:5; }
-.htl-item:nth-child(odd) .htl-stem { bottom:0; height:28px; }
-.htl-item:nth-child(even) .htl-stem { top:0; height:28px; }
-.htl-dot { position:absolute; left:17px; width:14px; height:14px; border-radius:50%; border:3px solid var(--white); z-index:15; }
-.htl-item:nth-child(odd) .htl-dot { bottom:-7px; }
-.htl-item:nth-child(even) .htl-dot { top:-7px; }
+.htl-track { display:grid; grid-template-rows:180px 180px; grid-auto-columns:230px; grid-auto-flow:column; min-width:max-content; padding:0 24px; gap:0; position:relative; }
+.htl-axis { position:absolute; top:50%; left:0; right:0; height:4px; transform:translateY(-50%); background:linear-gradient(90deg, var(--text-muted) 0%, var(--red) 20%, var(--amber) 45%, var(--red) 60%, var(--green) 80%, var(--gold) 100%); border-radius:2px; z-index:1; }
+.htl-item { position:relative; z-index:10; padding:6px 6px; display:flex; flex-direction:column; }
+.htl-item:nth-child(odd) { grid-row:1; align-self:end; padding-bottom:20px; }
+.htl-item:nth-child(even) { grid-row:2; align-self:start; padding-top:20px; }
+.htl-stem { display:none; }
+.htl-dot { position:absolute; left:24px; width:14px; height:14px; border-radius:50%; border:3px solid var(--white); z-index:15; }
+.htl-item:nth-child(odd) .htl-dot { bottom:-27px; }
+.htl-item:nth-child(even) .htl-dot { top:-27px; }
 .htl-dot.red { background:var(--red); box-shadow:0 0 0 2px var(--red); }
 .htl-dot.green { background:var(--green); box-shadow:0 0 0 2px var(--green); }
 .htl-dot.amber { background:var(--amber); box-shadow:0 0 0 2px var(--amber); }
@@ -104,7 +102,7 @@ strong { color:var(--text); }
 .htl-title { font-weight:700; font-size:0.78rem; color:var(--navy); line-height:1.3; margin-bottom:5px; }
 .htl-body { font-size:0.72rem; color:var(--text-mid); line-height:1.6; }
 .htl-body strong { color:var(--text); }
-@media print { .htl-wrap { overflow:visible; } .htl-track { flex-wrap:wrap; } .htl-item { min-width:45%; } }
+@media print { .htl-wrap { overflow:visible; } .htl-track { display:block; } .htl-item { display:block; margin-bottom:12px; } }
 @media (max-width:768px) { .htl-item { min-width:200px; max-width:220px; } }
 
 /* Badges */
@@ -226,7 +224,7 @@ tr:hover td { background:rgba(197,160,40,0.04); }
   
   <div class="htl-hint">← Scroll horizontally to see the full timeline →</div>
   <div class="htl-wrap">
-    <div class="htl-track" style="height:520px;">
+    <div class="htl-track">
       <div class="htl-axis"></div>
 
       <div class="htl-item"><div class="htl-stem"></div><div class="htl-dot navy"></div><div class="htl-card navy"><div class="htl-date">08 Mar 2025</div><div class="htl-title">Vik is Made Redundant</div><div class="htl-body">20+ year career, $200K income. Financial hardship &amp; address instability begin.</div></div></div>
