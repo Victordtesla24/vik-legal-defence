@@ -1048,6 +1048,7 @@ p { font-size:0.87rem; line-height:1.7; color:var(--text-mid); margin-bottom:10p
     };
 
     window.itlScrollToToday = function() {
+      if (!scrollContainer || !positions || !positions.length) return;
       // Find the event closest to today
       var today = new Date();
       var closest = 0;
