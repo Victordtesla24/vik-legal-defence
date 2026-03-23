@@ -71,35 +71,35 @@ strong { color:var(--text); }
 .impact-desc { font-size:0.8rem; color:var(--text-mid); line-height:1.6; }
 
 /* Horizontal Timeline */
-.htl-wrap { overflow-x:auto; padding:0 0 12px; -webkit-overflow-scrolling:touch; width:100vw; margin-left:calc(-50vw + 50%); }
-.htl-wrap::-webkit-scrollbar { height:6px; }
-.htl-wrap::-webkit-scrollbar-track { background:var(--paper); border-radius:3px; }
-.htl-wrap::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
+.htl-wrap { overflow-x:auto; padding:0; -webkit-overflow-scrolling:touch; width:100vw; margin-left:calc(-50vw + 50%); }
+.htl-wrap::-webkit-scrollbar { height:8px; }
+.htl-wrap::-webkit-scrollbar-track { background:#f0ede6; border-radius:4px; }
+.htl-wrap::-webkit-scrollbar-thumb { background:var(--gold); border-radius:4px; }
 .htl-hint { text-align:center; font-family:var(--font-m); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px; }
-.htl-track { position:relative; display:flex; align-items:flex-start; min-width:max-content; padding:0 60px; height:560px; }
-.htl-axis { position:absolute; top:250px; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--paper) 0%, var(--text-muted) 5%, var(--red) 20%, var(--amber) 40%, var(--red) 55%, var(--green) 75%, var(--gold) 95%, var(--paper) 100%); z-index:1; }
-.htl-item { position:relative; width:240px; min-width:240px; flex-shrink:0; z-index:10; margin-right:28px; }
-.htl-stem { position:absolute; width:2px; background:var(--border-dark,#B0BBCC); left:28px; z-index:5; }
-.htl-dot { position:absolute; left:22px; width:12px; height:12px; border-radius:50%; border:2px solid var(--white); z-index:15; box-shadow:0 0 0 2px currentColor; }
-.htl-dot.red { background:var(--red); color:var(--red); }
-.htl-dot.green { background:var(--green); color:var(--green); }
-.htl-dot.amber { background:var(--amber); color:var(--amber); }
-.htl-dot.navy { background:var(--navy); color:var(--navy); }
-.htl-dot.gold { background:var(--gold); color:var(--gold); animation:htl-pulse 2s infinite; }
-@keyframes htl-pulse { 0%,100%{box-shadow:0 0 0 2px var(--gold);} 50%{box-shadow:0 0 0 8px rgba(197,160,40,0.25);} }
-.htl-card { background:var(--white); border:1px solid var(--border); border-radius:8px; padding:14px 16px; box-shadow:0 2px 12px rgba(11,31,58,0.07); transition:box-shadow 0.25s, transform 0.25s; cursor:default; }
+.htl-track { display:flex; position:relative; height:620px; min-width:max-content; padding:0 60px; }
+.htl-axis { position:absolute; top:280px; left:0; right:0; height:3px; background:linear-gradient(90deg, rgba(160,170,185,0) 0%, #A0AAB9 3%, #B5432A 18%, #C5A028 42%, #B5432A 58%, #2D6A4F 78%, #C5A028 95%, rgba(160,170,185,0) 100%); z-index:1; }
+.htl-item { position:relative; width:240px; min-width:240px; flex-shrink:0; height:100%; margin-right:24px; z-index:10; }
+.htl-stem { position:absolute; width:2px; left:30px; background:var(--border-dark,#B0BBCC); z-index:5; }
+.htl-dot { position:absolute; left:24px; top:274px; width:12px; height:12px; border-radius:50%; border:2px solid #fff; z-index:15; }
+.htl-dot.red { background:#B5432A; box-shadow:0 0 0 2px #B5432A; }
+.htl-dot.green { background:#2D6A4F; box-shadow:0 0 0 2px #2D6A4F; }
+.htl-dot.amber { background:#C5A028; box-shadow:0 0 0 2px #C5A028; }
+.htl-dot.navy { background:#0B1F3A; box-shadow:0 0 0 2px #0B1F3A; }
+.htl-dot.gold { background:#C5A028; box-shadow:0 0 0 2px #C5A028; animation:htl-pulse 2s infinite; }
+@keyframes htl-pulse { 0%,100%{box-shadow:0 0 0 2px #C5A028;} 50%{box-shadow:0 0 0 8px rgba(197,160,40,0.3);} }
+.htl-card { position:absolute; left:0; right:0; background:#fff; border:1px solid var(--border,#D5CFC2); border-radius:8px; padding:14px 16px; box-shadow:0 2px 12px rgba(11,31,58,0.07); transition:box-shadow 0.25s, transform 0.25s; cursor:default; }
 .htl-card:hover { box-shadow:0 6px 24px rgba(11,31,58,0.14); transform:translateY(-3px); }
-.htl-card.red { border-top:3px solid var(--red); }
-.htl-card.green { border-top:3px solid var(--green); }
-.htl-card.amber { border-top:3px solid var(--amber); }
-.htl-card.navy { border-top:3px solid var(--navy); }
-.htl-card.gold { border-top:3px solid var(--gold); }
-.htl-date { font-family:var(--font-m); font-size:0.6rem; color:var(--gold); letter-spacing:0.06em; margin-bottom:4px; }
-.htl-title { font-weight:700; font-size:0.8rem; color:var(--navy); line-height:1.35; margin-bottom:5px; }
-.htl-body { font-size:0.72rem; color:var(--text-mid); line-height:1.6; }
-.htl-body strong { color:var(--text); }
-@media print { .htl-wrap { overflow:visible; width:auto; margin-left:0; } .htl-track { flex-wrap:wrap; height:auto; } .htl-item { width:45%; margin-bottom:16px; } .htl-axis,.htl-stem,.htl-dot { display:none; } }
-@media (max-width:768px) { .htl-item { width:210px; min-width:210px; } .htl-track { height:520px; } } }
+.htl-card.red { border-top:3px solid #B5432A; }
+.htl-card.green { border-top:3px solid #2D6A4F; }
+.htl-card.amber { border-top:3px solid #C5A028; }
+.htl-card.navy { border-top:3px solid #0B1F3A; }
+.htl-card.gold { border-top:3px solid #C5A028; }
+.htl-date { font-family:var(--font-m); font-size:0.6rem; color:var(--gold,#C5A028); letter-spacing:0.06em; margin-bottom:4px; }
+.htl-title { font-weight:700; font-size:0.82rem; color:var(--navy,#0B1F3A); line-height:1.35; margin-bottom:5px; }
+.htl-body { font-size:0.73rem; color:var(--text-mid,#5A6577); line-height:1.6; }
+.htl-body strong { color:var(--text,#2C3E50); }
+@media print { .htl-wrap { overflow:visible; width:auto; margin-left:0; } .htl-track { flex-wrap:wrap; height:auto; } .htl-item { width:45%; height:auto; position:static; margin-bottom:16px; } .htl-card { position:static; } .htl-axis,.htl-stem,.htl-dot { display:none; } }
+@media (max-width:768px) { .htl-item { width:200px; min-width:200px; } } .htl-track { height:520px; } } }
 
 /* Badges */
 .badge { display:inline-block; font-family:var(--font-m); font-size:0.6rem; padding:3px 10px; border-radius:3px; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; }
@@ -231,24 +231,24 @@ tr:hover td { background:rgba(197,160,40,0.04); }
   
   <div class="htl-hint">← Scroll horizontally to see the full timeline →</div>
   <div class="htl-wrap">
-        <div class="htl-track">
+            <div class="htl-track">
       <div class="htl-axis"></div>
-      <div class="htl-item" style="margin-top:50px;"><div class="htl-stem" style="top:170px; height:80px;"></div><div class="htl-dot navy" style="top:244px;"></div><div class="htl-card navy"><div class="htl-date">08 Mar 2025</div><div class="htl-title">Vik is Made Redundant</div><div class="htl-body">15+ year career at ANZ, NAB, Microsoft, Telstra. $200K income gone. Financial hardship &amp; address instability begin.</div></div></div>
-      <div class="htl-item" style="margin-top:280px;"><div class="htl-stem" style="top:250px; height:30px;"></div><div class="htl-dot green" style="top:244px;"></div><div class="htl-card green"><div class="htl-date">19 Jun 2025</div><div class="htl-title">Tries to Set Up Fines Payment Plan</div><div class="htl-body">Proactively applies for Centrepay $150/fortnight — <strong>3 months before any suspension</strong>.</div></div></div>
-      <div class="htl-item" style="margin-top:120px;"><div class="htl-stem" style="top:240px; height:10px;"></div><div class="htl-dot red" style="top:244px;"></div><div class="htl-card red"><div class="htl-date">18 Sep 2025</div><div class="htl-title">Licence Suspended — Acts Same Day</div><div class="htl-body">Fines Vic suspends licence (incorrect fines + unpaid fines). <strong>Applies for payment plan same day.</strong></div></div></div>
-      <div class="htl-item" style="margin-top:268px;"><div class="htl-stem" style="top:250px; height:18px;"></div><div class="htl-dot green" style="top:244px;"></div><div class="htl-card green"><div class="htl-date">19 Sep 2025</div><div class="htl-title">Fines Vic Directs: LIFT SUSPENSION</div><div class="htl-body"><strong>One day before the offence.</strong> Fines Vic tells VicRoads to reverse the suspension.</div></div></div>
-      <div class="htl-item" style="margin-top:30px;"><div class="htl-stem" style="top:150px; height:100px;"></div><div class="htl-dot red" style="top:244px;"></div><div class="htl-card red"><div class="htl-date">20 Sep 2025</div><div class="htl-title">⚡ First Intercept — Burnley</div><div class="htl-body">Charged: drive whilst suspended. Same day, VicRoads approves his vehicle permit — processing apps but not the lift.</div></div></div>
-      <div class="htl-item" style="margin-top:300px;"><div class="htl-stem" style="top:250px; height:50px;"></div><div class="htl-dot green" style="top:244px;"></div><div class="htl-card green"><div class="htl-date">24 Sep 2025</div><div class="htl-title">VicRoads Clearance Letter Issued</div><div class="htl-body">Official letter confirms directions ended. 5-day processing delay from the 19 Sep directive.</div></div></div>
-      <div class="htl-item" style="margin-top:85px;"><div class="htl-stem" style="top:205px; height:45px;"></div><div class="htl-dot amber" style="top:244px;"></div><div class="htl-card amber"><div class="htl-date">26 Sep 2025</div><div class="htl-title">VicRoads Admits: "System Can't Fix This"</div><div class="htl-body">Told: system cannot reverse, letter is legally valid, wait 3 months. Nothing can be done.</div></div></div>
-      <div class="htl-item" style="margin-top:285px;"><div class="htl-stem" style="top:250px; height:35px;"></div><div class="htl-dot green" style="top:244px;"></div><div class="htl-card green"><div class="htl-date">23–30 Sep 2025</div><div class="htl-title">3 Fines Vic Submissions Filed</div><div class="htl-body">Payment arrangement, enforcement review, 556KB infringement extension with supporting docs.</div></div></div>
-      <div class="htl-item" style="margin-top:45px;"><div class="htl-stem" style="top:165px; height:85px;"></div><div class="htl-dot green" style="top:244px;"></div><div class="htl-card green"><div class="htl-date">13 Oct 2025</div><div class="htl-title">Police Officer: "Will Not Charge"</div><div class="htl-body">SC D’Cruze emails: will not proceed if clear. Receives VicRoads letter. <strong>Never charges Vik. Ever.</strong></div></div></div>
-      <div class="htl-item" style="margin-top:270px;"><div class="htl-stem" style="top:250px; height:20px;"></div><div class="htl-dot red" style="top:244px;"></div><div class="htl-card red"><div class="htl-date">20 Oct 2025</div><div class="htl-title">LEAP Still Wrong — 26 Days Later</div><div class="htl-body">D’Cruze: “licence still showing suspended.” Police database never updated despite clearance.</div></div></div>
-      <div class="htl-item" style="margin-top:110px;"><div class="htl-stem" style="top:230px; height:20px;"></div><div class="htl-dot green" style="top:244px;"></div><div class="htl-card green"><div class="htl-date">21 Oct onwards</div><div class="htl-title">D’Cruze Goes Silent — No Charge Filed</div><div class="htl-body">The only officer who investigated <strong>never issues a charge sheet</strong>. Officers who charged never investigated.</div></div></div>
-      <div class="htl-item" style="margin-top:310px;"><div class="htl-stem" style="top:250px; height:60px;"></div><div class="htl-dot red" style="top:244px;"></div><div class="htl-card red"><div class="htl-date">3 Nov 2025</div><div class="htl-title">⚡ Second Intercept — Oakleigh</div><div class="htl-body">Charged: suspended + drug presence (trace). Based on same database error police already knew was wrong.</div></div></div>
-      <div class="htl-item" style="margin-top:65px;"><div class="htl-stem" style="top:185px; height:65px;"></div><div class="htl-dot green" style="top:244px;"></div><div class="htl-card green"><div class="htl-date">12–21 Nov 2025</div><div class="htl-title">3 More Fines Vic Submissions</div><div class="htl-body">Internal review + 2 enforcement reviews. <strong>6 total formal submissions in 2 months.</strong></div></div></div>
-      <div class="htl-item" style="margin-top:275px;"><div class="htl-stem" style="top:250px; height:25px;"></div><div class="htl-dot amber" style="top:244px;"></div><div class="htl-card amber"><div class="htl-date">18 Dec 2025</div><div class="htl-title">Suspension Auto-Expires</div><div class="htl-body">3 months later, the system releases. No human intervened. A mainframe job completed.</div></div></div>
-      <div class="htl-item" style="margin-top:20px;"><div class="htl-stem" style="top:140px; height:110px;"></div><div class="htl-dot gold" style="top:244px;"></div><div class="htl-card gold"><div class="htl-date">13 Apr 2026 · 9:30 AM</div><div class="htl-title">🔴 Court — Melbourne MC</div><div class="htl-body">Case R12649243. Drive whilst suspended (Burnley, 20 Sep 2025).</div></div></div>
-      <div class="htl-item" style="margin-top:320px;"><div class="htl-stem" style="top:250px; height:70px;"></div><div class="htl-dot gold" style="top:244px;"></div><div class="htl-card gold"><div class="htl-date">14 Apr 2026 · 10:00 AM</div><div class="htl-title">🔴 Court — Moorabbin MC</div><div class="htl-body">Case R12693565. Suspended + drug presence (Oakleigh, 3 Nov 2025).</div></div></div>
+      <div class="htl-item"><div class="htl-card navy" style="top:30px;"><div class="htl-date">08 Mar 2025</div><div class="htl-title">Vik is Made Redundant</div><div class="htl-body">15+ year career at ANZ, NAB, Microsoft, Telstra. $200K income gone. Financial hardship &amp; address instability begin.</div></div><div class="htl-stem" style="top:160px;height:120px;"></div><div class="htl-dot navy"></div></div>
+      <div class="htl-item"><div class="htl-card green" style="top:300px;"><div class="htl-date">19 Jun 2025</div><div class="htl-title">Tries to Set Up Fines Payment Plan</div><div class="htl-body">Proactively applies for Centrepay $150/fortnight — <strong>3 months before any suspension</strong>.</div></div><div class="htl-stem" style="top:280px;height:20px;"></div><div class="htl-dot green"></div></div>
+      <div class="htl-item"><div class="htl-card red" style="top:100px;"><div class="htl-date">18 Sep 2025</div><div class="htl-title">Licence Suspended — Acts Same Day</div><div class="htl-body">Fines Vic suspends licence (incorrect fines + unpaid). <strong>Applies for payment plan same day.</strong></div></div><div class="htl-stem" style="top:230px;height:50px;"></div><div class="htl-dot red"></div></div>
+      <div class="htl-item"><div class="htl-card green" style="top:340px;"><div class="htl-date">19 Sep 2025</div><div class="htl-title">Fines Vic Directs: LIFT SUSPENSION</div><div class="htl-body"><strong>One day before the offence.</strong> Fines Vic tells VicRoads to reverse the suspension.</div></div><div class="htl-stem" style="top:280px;height:60px;"></div><div class="htl-dot green"></div></div>
+      <div class="htl-item"><div class="htl-card red" style="top:10px;"><div class="htl-date">20 Sep 2025</div><div class="htl-title">⚡ First Intercept — Burnley</div><div class="htl-body">Charged: drive whilst suspended. Same day, VicRoads approves vehicle permit — processing apps but not the lift.</div></div><div class="htl-stem" style="top:140px;height:140px;"></div><div class="htl-dot red"></div></div>
+      <div class="htl-item"><div class="htl-card green" style="top:310px;"><div class="htl-date">24 Sep 2025</div><div class="htl-title">VicRoads Clearance Letter Issued</div><div class="htl-body">Official letter confirms directions ended. 5-day processing delay from the 19 Sep directive.</div></div><div class="htl-stem" style="top:280px;height:30px;"></div><div class="htl-dot green"></div></div>
+      <div class="htl-item"><div class="htl-card amber" style="top:70px;"><div class="htl-date">26 Sep 2025</div><div class="htl-title">VicRoads: "System Can't Fix This"</div><div class="htl-body">Told: system cannot reverse, clearance letter is legally valid, wait 3 months. Nothing can be done.</div></div><div class="htl-stem" style="top:200px;height:80px;"></div><div class="htl-dot amber"></div></div>
+      <div class="htl-item"><div class="htl-card green" style="top:370px;"><div class="htl-date">23–30 Sep 2025</div><div class="htl-title">3 Fines Vic Submissions Filed</div><div class="htl-body">Payment arrangement, enforcement review, 556KB infringement extension with docs.</div></div><div class="htl-stem" style="top:280px;height:90px;"></div><div class="htl-dot green"></div></div>
+      <div class="htl-item"><div class="htl-card green" style="top:40px;"><div class="htl-date">13 Oct 2025</div><div class="htl-title">Officer: "Will Not Charge"</div><div class="htl-body">SC D’Cruze emails: will not proceed. Receives VicRoads letter. <strong>Never charges Vik. Ever.</strong></div></div><div class="htl-stem" style="top:170px;height:110px;"></div><div class="htl-dot green"></div></div>
+      <div class="htl-item"><div class="htl-card red" style="top:305px;"><div class="htl-date">20 Oct 2025</div><div class="htl-title">LEAP Still Wrong — 26 Days Later</div><div class="htl-body">D’Cruze: “licence still showing suspended.” Police database never updated despite clearance.</div></div><div class="htl-stem" style="top:280px;height:25px;"></div><div class="htl-dot red"></div></div>
+      <div class="htl-item"><div class="htl-card green" style="top:120px;"><div class="htl-date">21 Oct onwards</div><div class="htl-title">D’Cruze Goes Silent — No Charge</div><div class="htl-body">The only officer who investigated <strong>never issues a charge sheet</strong>. Officers who charged never investigated.</div></div><div class="htl-stem" style="top:250px;height:30px;"></div><div class="htl-dot green"></div></div>
+      <div class="htl-item"><div class="htl-card red" style="top:360px;"><div class="htl-date">3 Nov 2025</div><div class="htl-title">⚡ Second Intercept — Oakleigh</div><div class="htl-body">Charged: suspended + drug presence (trace). Based on same database error police knew was wrong.</div></div><div class="htl-stem" style="top:280px;height:80px;"></div><div class="htl-dot red"></div></div>
+      <div class="htl-item"><div class="htl-card green" style="top:55px;"><div class="htl-date">12–21 Nov 2025</div><div class="htl-title">3 More Fines Vic Submissions</div><div class="htl-body">Internal review + 2 enforcement reviews. <strong>6 total submissions in 2 months.</strong></div></div><div class="htl-stem" style="top:185px;height:95px;"></div><div class="htl-dot green"></div></div>
+      <div class="htl-item"><div class="htl-card amber" style="top:325px;"><div class="htl-date">18 Dec 2025</div><div class="htl-title">Suspension Auto-Expires</div><div class="htl-body">3 months later, the system releases. No human intervened. A mainframe job completed.</div></div><div class="htl-stem" style="top:280px;height:45px;"></div><div class="htl-dot amber"></div></div>
+      <div class="htl-item"><div class="htl-card gold" style="top:15px;"><div class="htl-date">13 Apr 2026 · 9:30 AM</div><div class="htl-title">🔴 Court — Melbourne MC</div><div class="htl-body">Case R12649243. Drive whilst suspended (Burnley, 20 Sep).</div></div><div class="htl-stem" style="top:145px;height:135px;"></div><div class="htl-dot gold"></div></div>
+      <div class="htl-item"><div class="htl-card gold" style="top:380px;"><div class="htl-date">14 Apr 2026 · 10:00 AM</div><div class="htl-title">🔴 Court — Moorabbin MC</div><div class="htl-body">Case R12693565. Suspended + drug presence (Oakleigh, 3 Nov).</div></div><div class="htl-stem" style="top:280px;height:100px;"></div><div class="htl-dot gold"></div></div>
     </div>
   </div>
 </section>
