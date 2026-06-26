@@ -1,0 +1,22 @@
+# vik-legal-defence — CI/CD
+# Thin caller for the GLOBAL canonical reusable pipeline. Do not inline steps here.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  ci-cd:
+    uses: Victordtesla24/prompt-reconstruction-engine/.github/workflows/reusable-ci-cd.yml@main
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    secrets: inherit
+    with:
+      deploy_target: github-pages
+      pages_dir: "."
+      smoke_url: https://victordtesla24.github.io/vik-legal-defence/
+      smoke_expect_code: "200"
